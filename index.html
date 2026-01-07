@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="日本の47都道府県の明日の天気予報を一覧で表示します。気温、降水確率、天気アイコンで分かりやすく確認できます。">
+    <title>明日の天気予報 - 都道府県別</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header class="header">
+        <div class="header-content">
+            <h1>🌤️ 明日の天気予報</h1>
+            <p class="subtitle" id="forecast-date">読み込み中...</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>天気データを取得中...</p>
+        </div>
+
+        <div id="error" class="error" style="display: none;">
+            <p>⚠️ データの取得に失敗しました</p>
+            <button onclick="loadWeatherData()">再試行</button>
+        </div>
+
+        <div id="weather-container" class="weather-container"></div>
+    </main>
+
+    <footer class="footer">
+        <p>データ提供: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> (日本気象庁データ)</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
